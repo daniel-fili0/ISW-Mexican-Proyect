@@ -1,4 +1,4 @@
-# 🚗 Mexican Proyect
+# Mexican Proyect
 
 Este es un prototipo de sistema de estacionamiento hecho con **React + Vite**, estilizado con **TailwindCSS** y usando **Supabase** como backend.
 
