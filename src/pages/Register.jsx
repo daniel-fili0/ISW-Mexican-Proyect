@@ -319,7 +319,11 @@ const Register = () => {
                   width: "15px",
                   height: "15px",
                   marginRight: 1,
-                  "& .MuiSvgIcon-root": { width: 10, height: 10, color: "white" },
+                  "& .MuiSvgIcon-root": {
+                    width: 10,
+                    height: 10,
+                    color: "white",
+                  },
                 }}
                 icon={
                   <Box
