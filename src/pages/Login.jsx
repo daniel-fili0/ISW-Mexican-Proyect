@@ -217,21 +217,23 @@ const Login = () => {
               left: "61px",
             }}
           >
-            <Button
-              variant="contained"
-              fullWidth
-              sx={{
-                bgcolor: "#08001b",
-                fontWeight: 700,
-                fontFamily: "'Orbitron', sans-serif",
-                fontSize: 15,
-                height: 40,
-                mb: 1,
-                "&:hover": { bgcolor: "#770275" },
-              }}
-            >
-              Registrarse
-            </Button>
+            <Link to="/Profile">
+              <Button
+                variant="contained"
+                fullWidth
+                sx={{
+                  bgcolor: "#08001b",
+                  fontWeight: 700,
+                  fontFamily: "'Orbitron', sans-serif",
+                  fontSize: 15,
+                  height: 40,
+                  mb: 1,
+                  "&:hover": { bgcolor: "#770275" },
+                }}
+              >
+                Ingresar
+              </Button>
+            </Link>
           </Box>
 
           {/* Link a Registro */}

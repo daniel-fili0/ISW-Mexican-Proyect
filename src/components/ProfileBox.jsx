@@ -3,6 +3,7 @@ import CameraAltIcon from "@mui/icons-material/CameraAlt";
 import EmailIcon from "@mui/icons-material/Email";
 import StarIcon from "@mui/icons-material/Star";
 import VpnKeyIcon from "@mui/icons-material/VpnKey";
+import ProfileImage from "../assets/profile.jpg";
 import {
   Avatar,
   Box,
@@ -16,59 +17,54 @@ import React from "react";
 
 // Mock data for the user profile
 const userData = {
-  name: "Alejandra Villegas",
+  name: "Ale Villegas",
   role: "Estudiante",
   department: "Sistemas computacionales",
   studentId: "2022630679",
   email: "avillegasg2101@alumno.ipn.mx",
   password: "*****************",
-  profileImage: "https://example.com/image-1.png", // Replace with actual image URL in production
 };
 
 const ProfileBox = () => {
   return (
-    <Box sx={{ width: "100%", position: "relative", my: 2 }}>
+    <Box sx={{ width: "80%", position: "relative", top: "50px", left: "10%" }}>
       <Card
         sx={{
           position: "relative",
-          pt: 7,
-          pb: 2,
-          px: 2,
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           borderRadius: "5px",
           border: "0.5px solid",
-          borderColor: "primary.main",
+          borderColor: "white",
           boxShadow: "inset 0px 4px 4px rgba(0, 0, 0, 0.65)",
         }}
       >
-        {/* Profile Avatar with Camera Icon */}
+        {/* Perfil */}
         <Box sx={{ position: "relative", mb: 1 }}>
           <Avatar
-            src={userData.profileImage}
+            src={ProfileImage}
             alt={userData.name}
             sx={{
-              width: 106,
-              height: 106,
+              width: 100,
+              height: 100,
               position: "absolute",
-              top: -106,
+              top: -50,
               left: "50%",
               transform: "translateX(-50%)",
-              border: "3px solid white",
             }}
           />
           <IconButton
             sx={{
               position: "absolute",
-              top: -36,
-              right: -21,
-              backgroundColor: "primary.main",
-              width: 42,
-              height: 42,
-              border: "3px solid white",
+              top: 20,
+              right: -51,
+              backgroundColor: "#002250",
+              width: 38,
+              height: 38,
+              border: "2.5px solid white",
               "&:hover": {
-                backgroundColor: "primary.dark",
+                backgroundColor: "#0090A4",
               },
             }}
           >
@@ -76,85 +72,87 @@ const ProfileBox = () => {
           </IconButton>
         </Box>
 
-        {/* User Name and Role */}
+        {/* Nombre y rol */}
         <Typography
           variant="h3"
-          color="primary.main"
-          sx={{ mt: 7, fontWeight: "bold", textAlign: "center" }}
+          color="#002250"
+          sx={{
+            mt: 7,
+            fontWeight: "bold",
+            textAlign: "center",
+            fontSize: "20px",
+            fontFamily: "'Inter', sans-serif",
+          }}
         >
           {userData.name}
         </Typography>
 
         <Typography
           variant="body1"
-          color="text.secondary"
+          color="#0090A4"
           sx={{ textAlign: "center", mb: 1 }}
         >
           {userData.role}
         </Typography>
 
-        <Divider sx={{ width: "45%", my: 1 }} />
+        <Divider sx={{ width: "50%", my: 0.5 }} />
 
         {/* User Information */}
-        <Box sx={{ width: "100%", mt: 2, px: 2 }}>
+        <Box sx={{ width: "100%", mt: 2, ml: 8 }}>
           <Box sx={{ display: "flex", alignItems: "center", mb: 1.5 }}>
-            <BookmarkIcon sx={{ color: "text.secondary", mr: 1 }} />
-            <Typography variant="body1" color="text.secondary">
+            <BookmarkIcon sx={{ color: "#0090a4", mr: 1 }} />
+            <Typography variant="body1" color="grey.700">
               {userData.department}
             </Typography>
           </Box>
 
           <Box sx={{ display: "flex", alignItems: "center", mb: 1.5 }}>
-            <StarIcon sx={{ color: "text.secondary", mr: 1 }} />
-            <Typography variant="subtitle2" color="text.secondary">
+            <StarIcon sx={{ color: "#0090A4", mr: 1 }} />
+            <Typography variant="subtitle2" color="grey.700">
               Número de boleta:{" "}
-              <Typography
-                component="span"
-                variant="body1"
-                color="text.secondary"
-              >
+              <Typography component="span" variant="subtitle2" color="grey.700">
                 {userData.studentId}
               </Typography>
             </Typography>
           </Box>
 
           <Box sx={{ display: "flex", alignItems: "center", mb: 1.5 }}>
-            <EmailIcon sx={{ color: "text.secondary", mr: 1 }} />
-            <Typography variant="body1" color="text.secondary">
+            <EmailIcon sx={{ color: "#0090A4", mr: 1 }} />
+            <Typography variant="body1" color="grey.700">
               {userData.email}
             </Typography>
           </Box>
 
           <Box sx={{ display: "flex", alignItems: "center", mb: 1.5 }}>
-            <VpnKeyIcon sx={{ color: "text.secondary", mr: 1 }} />
-            <Typography variant="subtitle2" color="text.secondary">
+            <VpnKeyIcon sx={{ color: "#0090A4", mr: 1 }} />
+            <Typography variant="subtitle2" color="grey.700">
               Contraseña:{" "}
-              <Typography
-                component="span"
-                variant="body1"
-                color="text.secondary"
-              >
+              <Typography component="span" variant="body1" color="grey.700">
                 {userData.password}
               </Typography>
             </Typography>
           </Box>
         </Box>
 
-        {/* Edit Button */}
+        {/* Botón de editar */}
         <Box
           sx={{
             display: "flex",
             justifyContent: "flex-end",
             width: "100%",
-            mt: 2,
+            my: 3,
           }}
         >
           <Button
             variant="contained"
-            color="primary"
             sx={{
-              borderRadius: "var(--size-radius-200)",
-              height: 36,
+              bgcolor: "#002250",
+              fontWeight: 600,
+              fontFamily: "'Orbitron', sans-serif",
+              fontSize: 15,
+              height: 40,
+              mr: 5,
+              "&:hover": { bgcolor: "#0090a4" },
             }}
           >
             Editar

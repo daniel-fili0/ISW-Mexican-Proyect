@@ -1,168 +1,81 @@
-import divisor2 from "@mui/icons-material/Star";
-import header from "@mui/icons-material/Star";
-import perfil from "@mui/icons-material/Star";
-import { Box, Button, Stack, Typography } from "@mui/material";
+import { Box, Container, Typography, Paper } from "@mui/material";
+import ProfileBox from "../components/ProfileBox";
 import React from "react";
-import { StatusButton } from "../Components/StatusButton";
-import { Graph } from "../Components/Graph";
-import { ProfileBox } from "../Components/ProfileBox";
-import aver1 from "./aver-1.png";
-import image3 from "./image-3.png";
 
-// 👉 Importa imágenes locales
+// Imágenes
 import fondo from "../assets/Cel.jpg";
-import logo from "../assets/logo.jpg";
+import perfil from "../assets/profile.jpg";
 
 const Profile = () => {
   return (
-    <ThemeProvider>
+    <Container
+      disableGutters
+      sx={{
+        width: "412px",
+        height: "100vh",
+      }}
+    >
+      {/* Header */}
       <Box
+        fullwidth
         sx={{
-          width: "100%",
-          bgcolor: "background.default",
-          position: "relative",
+          height: "25vh",
+          backgroundImage: `url(${fondo})`,
+          backgroundSize: "cover",
+          backgroundPosition: "50% 50%",
         }}
       >
-        {/* Header and User Profile Section */}
-        <Box sx={{ position: "relative", width: "100%" }}>
-          <Box
-            component="img"
-            src={aver1}
-            alt="Aver"
-            sx={{ width: "100%", height: "179px" }}
-          />
-          <Box
-            component="img"
-            src={header}
-            alt="Header"
-            sx={{
-              width: "100%",
-              height: "72px",
-              position: "absolute",
-              top: 0,
-              left: 0,
-            }}
-          />
-
+        <Paper
+          elevation={3}
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            backgroundColor: "rgba(0, 34, 80, 0.7)",
+            height: "60px",
+            px: 2,
+          }}
+        >
           <Typography
-            variant="h1"
+            variant="h6"
             sx={{
-              position: "absolute",
-              top: "26px",
-              left: "42px",
               color: "white",
-              fontFamily: "'Orbitron-Bold', Helvetica",
+              fontFamily: "Orbitron, sans-serif",
+              fontSize: "18px",
             }}
           >
             Perfil
           </Typography>
 
-          <Box
-            sx={{
-              position: "absolute",
-              top: "2px",
-              right: "35px",
-              textAlign: "center",
-            }}
-          >
-            <Box
-              component="img"
-              src={image3}
-              alt="Profile"
-              sx={{
-                width: "45px",
-                height: "45px",
-                objectFit: "cover",
-              }}
-            />
+          <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
             <Typography
               variant="body1"
               sx={{
                 color: "white",
-                fontFamily: "'Inter-Regular', Helvetica",
+                fontFamily: "Inter, sans-serif",
+                fontSize: "15px",
               }}
             >
               Ale
             </Typography>
-          </Box>
 
-          <ProfileBox />
-        </Box>
-
-        {/* Statistics Chart Section */}
-        <Box sx={{ width: "100%", mt: 2, position: "relative" }}>
-          <Box
-            component="img"
-            src={perfil}
-            alt="Perfil"
-            sx={{ width: "100%", height: "279px" }}
-          />
-
-          <Box sx={{ position: "relative", zIndex: 1 }}>
             <Box
+              component="img"
+              src={perfil}
+              alt="Perfil"
               sx={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                px: 3,
-                pt: 1,
+                borderRadius: "50%",
+                width: "37px",
+                height: "37px",
+                objectFit: "cover",
               }}
-            >
-              <Box>
-                <Typography
-                  variant="h2"
-                  sx={{
-                    color: "primary.main",
-                    fontFamily: "'Orbitron-Bold', Helvetica",
-                  }}
-                >
-                  Estadísticas
-                </Typography>
-                <Box
-                  component="img"
-                  src={divisor2}
-                  alt="Divisor"
-                  sx={{ width: "113px", mt: 1 }}
-                />
-              </Box>
-
-              <Typography
-                variant="subtitle1"
-                sx={{
-                  color: "secondary.main",
-                  fontFamily: "'Inter-Bold', Helvetica",
-                }}
-              >
-                Uso semanal
-              </Typography>
-            </Box>
-
-            <Graph />
-
-            <Stack alignItems="center" sx={{ mt: 2, mb: 2 }}>
-              <Button
-                variant="contained"
-                color="primary"
-                sx={{
-                  borderRadius: "var(--size-radius-200)",
-                  fontFamily: "'Orbitron-Bold', Helvetica",
-                  fontWeight: "bold",
-                  fontSize: "15px",
-                  lineHeight: "15px",
-                  py: "9px",
-                  px: "30px",
-                }}
-              >
-                Reporte completo
-              </Button>
-            </Stack>
+            />
           </Box>
-        </Box>
+        </Paper>
 
-        {/* Report Button Section */}
-        <StatusButton />
+        <ProfileBox />
       </Box>
-    </ThemeProvider>
+    </Container>
   );
 };
 
