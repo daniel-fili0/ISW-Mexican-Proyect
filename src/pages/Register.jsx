@@ -23,7 +23,10 @@ import {
 
 // Imágenes
 import fondo from "../assets/Cel.jpg";
-import logo from "../assets/logo.png";
+
+// Componentes
+import Title from "../components/General/Title";
+import CustomButton from "../components/General/CustomButton";
 
 const Register = () => {
   // Estados
@@ -613,8 +616,8 @@ const Register = () => {
 
           {/* Botón y enlace final */}
           <Box sx={{ px: 2, pb: 2 }}>
-            <Button
-              variant="contained"
+            <CustomButton
+              name="Registrarse"
               fullWidth
               disabled={
                 !acceptTerms ||
@@ -631,18 +634,7 @@ const Register = () => {
                 errorPassword ||
                 errorConfirmPassword
               }
-              sx={{
-                bgcolor: "#08001b",
-                fontWeight: 700,
-                fontFamily: "'Orbitron', sans-serif",
-                fontSize: 15,
-                height: 40,
-                mb: 1,
-                "&:hover": { bgcolor: "#770275" },
-              }}
-            >
-              Registrarse
-            </Button>
+            />
 
             {/* Link a Login */}
             <Typography
@@ -671,21 +663,7 @@ const Register = () => {
         </Paper>
 
         {/* Título */}
-        <Typography
-          variant="h1"
-          sx={{
-            position: "absolute",
-            top: 5,
-            left: "110px",
-            fontFamily: "Orbitron, sans-serif",
-            fontWeight: 900,
-            color: "white",
-            fontSize: "30px",
-            WebkitTextStroke: "1.5px #770275",
-          }}
-        >
-          REGISTRO
-        </Typography>
+        <Title text="REGISTRO" />
       </Box>
     </Container>
   );

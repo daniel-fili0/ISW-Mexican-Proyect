@@ -4,28 +4,23 @@ import {
   Box,
   Button,
   Container,
-  InputAdornment,
   Paper,
   TextField,
   Typography,
-  IconButton,
   FormControl,
-  Select,
-  MenuItem,
-  Checkbox,
-  FormControlLabel,
-  Link,
 } from "@mui/material";
 
-// 👉 Importa imágenes locales
+// imágenes
 import fondo from "../assets/Cel.jpg";
 import logo from "../assets/logo.png";
+
+//Componentes
+import Title from "../components/General/Title";
 
 const ResetPassword = () => {
   const navigate = useNavigate();
 
   // Estados
-  const [boleta, setBoleta] = useState("");
   const [correo, setCorreo] = useState("");
   const [errorCorreo, setErrorCorreo] = useState(false);
 
@@ -174,20 +169,15 @@ const ResetPassword = () => {
         </Paper>
 
         {/* Título */}
-        <Typography
-          variant="h1"
+        <Title
+          text="RECUPERAR CONTRASEÑA"
           sx={{
-            position: "absolute",
+            top: 5,
+            left: "50%",
+            transform: "translateX(-50%)",
             textAlign: "center",
-            fontFamily: "Orbitron, sans-serif",
-            fontWeight: 900,
-            color: "white",
-            fontSize: "30px",
-            WebkitTextStroke: "1.5px #770275",
           }}
-        >
-          RECUPERAR CONTRASEÑA
-        </Typography>
+        />
 
         {/* Logo */}
         <Box
