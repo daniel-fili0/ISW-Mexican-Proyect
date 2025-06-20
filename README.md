@@ -1,3 +1,5 @@
+@@ -1,129 +1,12 @@
+
 # Mexican Proyect
 
 Este es un prototipo de sistema de estacionamiento hecho con **React + Vite**, estilizado con **TailwindCSS** y usando **Supabase** como backend.
@@ -68,7 +70,7 @@ export default {
     extend: {},
   },
   plugins: [],
-}
+};
 ```
 
 Y en `src/index.css`:
